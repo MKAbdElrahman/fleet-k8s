@@ -12,6 +12,7 @@ tasks:
 
   cluster-apply:
     cmds:
+      - kubectl apply -f config/k8s/pods/activemq/activemq-pod.yaml
       - kubectl apply -f config/k8s/pods/webapp/webapp-pod.yaml
       - kubectl apply -f config/k8s/pods/webapp/webapp-service.yaml
 

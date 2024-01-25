@@ -7,3 +7,7 @@ nodes:
     hostPort: 30080
     listenAddress: "127.0.0.1"
     protocol: TCP
+  - containerPort: 30010
+    hostPort: 30010
+    listenAddress: "127.0.0.1"
+    protocol: TCP
