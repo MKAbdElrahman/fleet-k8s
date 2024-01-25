@@ -1,0 +1,18 @@
+version: 3
+
+env:
+  KIND_CLUSTER: fleet
+tasks:
+  cluster-create:
+    cmds: 
+      - kind create cluster --config=config/k8s/kind/kind.yaml --name $KIND_CLUSTER
+      - kubectl cluster-info --context kind-$KIND_CLUSTER
+  cluster-delete: kind delete cluster  --name $KIND_CLUSTER
+  cluster-resources: kubectl get all 
+
+  cluster-apply:
+    cmds:
+      - kubectl apply -f config/k8s/pods/webapp/webapp-pod.yaml
+      - kubectl apply -f config/k8s/pods/webapp/webapp-service.yaml
+
+
